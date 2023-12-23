@@ -54,7 +54,7 @@ def home(request):
             },
             {
                 'img': '../static/images/cardCatalog/bike.jpg',
-                'tag': 'Новинка в наличии',
+                'tag': '',
                 'title': 'CF MOTO 800MT (CF800-5)',
                 'subtitle': 'N6003732',
                 'price': '260 329 500 UZS'
@@ -82,7 +82,7 @@ def home(request):
             },
             {
                 'img': '../static/images/cardCatalog/bike.jpg',
-                'tag': 'Новинка в наличии',
+                'tag': '',
                 'title': 'CF MOTO 800MT (CF800-5)',
                 'subtitle': 'N6003732',
                 'price': '260 329 500 UZS'
@@ -93,6 +93,43 @@ def home(request):
                 'title': 'CF MOTO 800MT (CF800-5)',
                 'subtitle': 'N6003732',
                 'price': '260 329 500 UZS'
+            },
+        ],
+        'form': [
+            {
+                'subtitle': 'Посоветовали друзья'
+            },
+            {
+                'subtitle': 'Посетил шоурум'
+            },
+            {
+                'subtitle': 'YouTube'
+            },
+            {
+                'subtitle': 'Telegram'
+            },
+            {
+                'subtitle': 'Instagram'
+            },
+            {
+                'subtitle': 'Facebook'
+            },
+        ],
+        'footer':[
+            {
+                'title':'Опыт',
+                'subtitle':'На рынке Узбекистана',
+                'img':'../static/images/footer/handshake.svg'
+            },
+            {
+                'title':'Профессионализм',
+                'subtitle':'40+ Моделей Мото-техники в наличии',
+                'img':'../static/images/footer/bike.svg'
+            },
+            {
+                'title':'Доверие',
+                'subtitle':'3000+ Счастливых обладателей нашей Мото-техники',
+                'img':'../static/images/footer/shade.svg'
             },
         ]
     }

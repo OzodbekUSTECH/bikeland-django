@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
-
-
+{#Header#}
 {% block header %}
     <header class="header__top">
         <div class="container">
@@ -69,7 +68,6 @@
     </header>
 {% endblock %}
 
-
 {% block headerBottom %}
     <div class="header__bottom">
         <div class="container">
@@ -81,3 +79,245 @@
         </div>
     </div>
 {% endblock %}
+{#/Header#}
+
+{#MainConfidence#}
+{% block mainConfidence %}
+    <section class="main__confidence">
+        <div class="container">
+            <div class="main__confidence-inner">
+                {% for el in mainConfidence %}
+                    <div class="main__confidence-inner__item">
+                            <span>
+                                <img src="{{ el.img }}" alt="">
+                            </span>
+                        <p class="main__confidence-title">{{ el.title }}</p>
+                        <p class="main__confidence-subtitle">
+                            <span>{{ el.mainSubtitle }}</span> {{ el.subtitle }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{#/MainConfidence#}
+
+{#catalogContent#}
+{% block catalogContent %}
+    <section class="catalog__content">
+        <div class="container">
+            <div class="catalog__inner">
+                {% for el in catalogContent %}
+                    <div class="catalog__card">
+                        <div class="card__top">
+                                <span class="card__top-wrapper">
+                                    <img class="card__top-img" src="{{ el.img }}" alt="bike">
+                                </span>
+                            {% if el.tag == '' %}
+
+                            {% else %}
+                                <div class="card__top-title">{{ el.tag }}</div>
+                            {% endif %}
+                            <div class="card__top-heart">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                     viewBox="0 0 1024 1024" height="1em" width="1em"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9zM512 814.8S156 586.7 156 385.5C156 283.6 240.3 201 344.3 201c73.1 0 136.5 40.8 167.7 100.4C543.2 241.8 606.6 201 679.7 201c104 0 188.3 82.6 188.3 184.5 0 201.2-356 429.3-356 429.3z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card__bottom">
+                            <p class="card__bottom-title">{{ el.title }}</p>
+                            <span class="card__bottom-subtitle">{{ el.subtitle }}</span>
+                            <p class="card__bottom-price">{{ el.price }}</p>
+                            <div class="card__bottom-buttons">
+                                <div class="card__bottom-details">Смотреть подробнее</div>
+                                <span class="card__bottom-main">Заказать</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{#/catalogContent#}
+
+{#mainVideo#}
+{% block mainVideo %}
+    <section class="main__video">
+        <div class="container">
+            <div class="main__video-inner">
+                <div class="video__inner-item__left">
+                    <iframe src="https://www.youtube.com/embed/3JwdTJz3JEc?si=3JwdTJz3JEc" loading="lazy"
+                            allowfullscreen="" title="Tashkent" width="100%" height="300"
+                            style="display: initial; border-radius: 15px; border: 0px;"></iframe>
+                </div>
+                <div class="video__inner-item__right">
+                    <iframe src="https://www.youtube.com/embed/QwAn7_aPo4U?si=QwAn7_aPo4U" loading="lazy"
+                            allowfullscreen="" title="Tashkent" width="100%" height="100%"
+                            style="display: initial; border-radius: 15px; border: 0px;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/yXFltkore7Y?si=yXFltkore7Y" loading="lazy"
+                            allowfullscreen="" title="Tashkent" width="100%" height="100%"
+                            style="display: initial; border-radius: 15px; border: 0px;"></iframe>
+                    <a href="https://www.youtube.com/@BikelandUz">Смотреть больше</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{#/mainVideo#}
+
+{#homeLocation#}
+{% block homeLocation %}
+    <div class="home__location">
+        <div class="container">
+            <h3>НАШИ ШОУРУМЫ</h3>
+            <div class="city__info">
+                <div class="city__inner">
+                    <p>
+                        <span class="city__title">Ташкент</span>Адрес: г.Ташкент, Ул. Янги Сергели</p>
+                    <span>Ориентир:</span>
+                    <p>Не доезжая моста Узгариш по дороге с Южного вокзала на Сергели АвтоБазар.</p>
+                    <p>
+                        <span>Телефон:</span>+998555006001
+                    </p>
+                    <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3Ab556089c92b6667e4e1f9ee4ef27930fa80b8bdc90a68971d724075dc27ab12b&amp;amp;source=constructor"
+                            loading="lazy" allowfullscreen="" title="Tashkent" width="100%" height="300"
+                            style="display: initial; border-radius: 15px; border: 0px;"></iframe>
+                </div>
+                <div class="city__inner">
+                    <p>
+                        <span class="city__title">Бухара</span>Адрес: г.Бухара, Ул. М.Авлиё дом 4
+                    </p>
+                    <span>Ориентир:</span>
+                    <p>Центр города, Вокзал, Головной офис Билайн в г.Бухаре</p>
+                    <p>
+                        <span>Телефон:</span>+998555006001
+                    </p>
+                    <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3Ae8ed7732575d940a509019b05ae15d5f0129823e2b1c8952e26df0a58344a60a&amp;amp;source=constructor"
+                            loading="lazy" allowfullscreen="" title="Tashkent" width="100%" height="300"
+                            style="display: initial; border-radius: 15px; border: 0px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{#/homeLocation#}
+{#Form#}
+{% block form %}
+    <section class="form">
+        <div class="container">
+            <div class="form__inner">
+                <h3>Обратный звонок</h3>
+                <div class="form__inner-content">
+                    <div class="form__banner">
+                        <span><img src="../static/images/form/banner.png" alt="banner"></span>
+                        <p>Хает Хидоятов, создатель Bikeland.uz вдохновивший<br> тысячи мотолюбителей со всего
+                            Узбекистана и СНГ</p>
+                    </div>
+                    <div class="form__content">
+                        <p class="form__content-title">Вы можете заказать обратный звонок <br> и мы перезвоним
+                            Вам сами</p>
+                        <div class="form__content-input">
+                            <span>Как к вам обращаться?</span>
+                            <input type="text" placeholder="Ваше имя" class="form__content-input__item"
+                                   value="">
+                        </div>
+                        <div class="form__content-input">
+                            <span>На какой номер вам перезвонить?</span>
+                            <input type="text" placeholder="+99890 999 99 99"
+                                   class="form__content-input__item" value="">
+                        </div>
+                        <div class="form__content-input">
+                            <span>Как к вам обращаться?</span>
+                            <input type="text" placeholder="Ваше имя" class="form__content-input__item"
+                                   value="">
+                        </div>
+                        <p class="form__content-subtitle">Откуда узнали о нас?</p>
+                        <div class="multy__form">
+                            {% for el in form %}
+                                <label class="multy__form-label">
+                                            <span class="multy__form-span">
+                                                <input type="checkbox" class="multy__form-input">
+                                            </span>
+                                    <span class="multy__form-subtitle">{{ el.subtitle }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <span class="form__main-button">Заказать звонок</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{#/Form#}
+
+{#Footer#}
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__inner-top">
+                    <span><img src="../static/images/logo/logo.svg" alt=""></span>
+                </div>
+                <div class="footer__feedback">
+                    {% for el in footer %}
+                        <div class="footer__feedback-item">
+                            <span><img src="{{ el.img }}" alt=""></span>
+                            <p class="footer__feedback-title">{{ el.title }}</p>
+                            <p class="footer__feedback-subtitle">{{ el.subtitle }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="footer__details">
+                    <div class="footer__contact">
+                        <p>Контакты для связи:</p>
+                        <ul>
+                            <li><img src="../static/images/footerContactIcons/phone.png" alt="icon">
+                                <a href="+998 55 500-60-02">+998 55 500-60-02</a>
+                            </li>
+                            <li><img src="../static/images/footerContactIcons/phone.png" alt="icon">
+                                <a href="+998 55 500-60-01">+998 55 500-60-01</a>
+                            </li>
+                            <li><img src="../static/images/footerContactIcons/mail.png" alt="icon">
+                                <a href="https://info@bikeland.uz">https://info@bikeland.uz</a>
+                            </li>
+                            <li><img src="../static/images/footerContactIcons/telegram.png" alt="icon">
+                                <a href="https://t.me/BikelandUz_bot">href="https://t.me/BikelandUz_bot"</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__payment">
+                        <p class="footer__payment-title">
+                            <span>
+                            Принимаем оплату:
+                            </span>
+                            Наличными, через банковский перевод или через платежные системы</p>
+                        <div class="payment__images">
+                            <span><img src="../static/images/footerPayment/payme.png" alt="payment"></span>
+                            <span><img src="../static/images/footerPayment/apelsin.png" alt="payment"></span>
+                            <span><img src="../static/images/footerPayment/click.png" alt="payment"></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="footer__nav">
+                    {% for el in nav %}
+                        <li><a href="{{ el.link }}">{{ el.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                <div class="social__media">
+                    <a href="#"><span><img src="../static/images/footerIcons/telegram.svg" alt="social"></span></a>
+                    <a href="#"><span><img src="../static/images/footerIcons/instagram.svg" alt="social"></span></a>
+                    <a href="#"><span><img src="../static/images/footerIcons/facebook.svg" alt="social"></span></a>
+                    <a href="#"><span><img src="../static/images/footerIcons/youtube.svg" alt="social"></span></a>
+                </div>
+                <p class="footer__bottom-text">
+                    © Все права защищены. Bikeland.uz & HAYAT CO LTD 2004-2023
+                </p>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+{#/Footer#}
