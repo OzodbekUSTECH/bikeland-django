@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 
+
 {% block header %}
     <header class="header__top">
         <div class="container">
@@ -66,4 +67,17 @@
             </div>
         </div>
     </header>
+{% endblock %}
+
+
+{% block headerBottom %}
+    <div class="header__bottom">
+        <div class="container">
+            <ul class="nav">
+                {% for el in nav %}
+                    <li><a href="{{ el.link }}">{{ el.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

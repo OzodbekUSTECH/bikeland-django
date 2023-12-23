@@ -9,12 +9,34 @@
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
 </head>
 <body>
-<!-- здесь нужно navbar -->
 <div class="layout">
+    {#Header#}
     {% block header %}
-
     {% endblock %}
-    <!-- #здесь тебе нужно footer -->
+    {% block headerBottom %}
+    {% endblock %}
+    {#/Header#}
+    {#Main#}
+    <div class="main">
+        <div class="main__home">
+            <section class="main__confidence">
+                <div class="container">
+                    <div class="main__confidence-inner">
+                        {% for el in mainConfidence %}
+                            <div class="main__confidence-inner__item">
+                            <span>
+                                <img src="{{ el.img }}" alt="">
+                            </span>
+                                <p class="main__confidence-title">{{ el.title }}</p>
+                                <p class="main__confidence-subtitle"><span>{{ el.mainSubtitle }}</span> {{ el.subtitle }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {#/Main#}
 </div>
 </body>
 </html>
